@@ -47,6 +47,10 @@ DEFAULT_APPS = [
     "django.contrib.staticfiles",
 ]
 
+DEVELOPED_APPS = [
+    "apps.people"
+]
+
 # Middlewares
 MIDDLEWARE = [
     "django.middleware.security.SecurityMiddleware",

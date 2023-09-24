@@ -22,12 +22,20 @@ LOGOUT_REDIRECT_URL = "core_login"
 
 # ##### DATABASE CONFIGURATION ############################
 DATABASES = {
+    # "default": {
+    #     "ENGINE": "django.db.backends.sqlite3",
+    #     "NAME": join(PROJECT_ROOT, "run", "dev.sqlite3"),
+    # }
     "default": {
-        "ENGINE": "django.db.backends.sqlite3",
-        "NAME": join(PROJECT_ROOT, "run", "dev.sqlite3"),
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "mofiddb",
+        "USER": "absol",
+        "PASSWORD": "postgres",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
 # ##### APPLICATION CONFIGURATION #########################
 
-INSTALLED_APPS = DEFAULT_APPS
+INSTALLED_APPS = DEFAULT_APPS + DEVELOPED_APPS
