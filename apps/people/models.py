@@ -132,7 +132,7 @@ class SamePeople(models.Model):
         verbose_name_plural = "SamePeople"
 
 
-class SameFamilies(Family):
+class SameFamilies(models.Model):
     parentid_1399 = models.PositiveBigIntegerField()
     parentid_1400 = models.PositiveBigIntegerField()
     membersid_1399 = ArrayField(models.PositiveBigIntegerField(), blank=True, null=True)
