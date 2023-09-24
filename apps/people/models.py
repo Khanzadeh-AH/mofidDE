@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.postgres.fields import ArrayField
 
 
 class People(models.Model):
@@ -93,3 +94,19 @@ class People1400(People):
     Cars_GheyrOmoomi_Count = models.PositiveBigIntegerField(null=True, blank=True)
     CarsPrice_Max = models.PositiveBigIntegerField(null=True, blank=True)
     CarsPrice_Min = models.PositiveBigIntegerField(null=True, blank=True)
+
+
+class Family(models.Model):
+    ParentID = models.PositiveBigIntegerField(primary_key=True)
+    MembersID = ArrayField(models.PositiveBigIntegerField(), blank=True, null=True)
+
+    class Meta:
+        abstract = True
+
+
+class Family1399(Family):
+    ...
+
+
+class Family1400(Family):
+    ...
