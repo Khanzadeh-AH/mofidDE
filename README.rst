@@ -21,39 +21,35 @@ Mofid DE enterance problem
 
 Anomalies in data
 ----
+برای پیدا کردن ناسازگاری در داده ها موارد زیر بررسی شدند.
 
-Author:
-    Mischback
+کاربرانی که بیش از یک سرپرست دارند. این مورد در هیچکدام از جداول مشاهده نشد.
 
-Contributors:
-    `agirardeaudale <https://github.com/agirardeuadale>`_,
-    `jmrbcu <https://github.com/jmrbcu>`_
+مقادیر فیلد مربوط به جنسیت نیز بررسی شد و ناسازگاری مشاهده نشد.
 
-Status:
-    maintained, in development
+در مقادیر تاریخ تولد، ناسازگاری وجود داشت. برای مثال با اجرای کوئری زیر، مقادیری بدست آمد که واضحا دارای خطا می باشند.
+::
 
-Version:
-    1.4
+    $ select max("BirthDate") from people_people1399;
 
-Django Version:
-    3.0, 2.2, 2.1, 2.0, 1.11
+        3221-03-06
 
+منظقا تعداد کاراکتر های کدپستی باید ثابت باشد. اما در این جداول در برخی موارد ۶ و در برخی دیگر ۷ کاراکتر بود.
 
-Usage
------
+بررسی شد که مقادیر ستون های مالی در جداول نامنفی باشند.
 
-To use this repository just use the ``template`` option of `django-admin
-<https://docs.djangoproject.com/en/2.2/ref/django-admin/#startproject>`_::
+اگر جدول مربوط به شهرستان های هر استان در دسترس بود، می توانستیم بررسی کنیم که واقعا شهرستان مذکور در استان مذکور وجود داشته باشد.
 
-    $ django-admin startproject --template=https://github.com/Mischback/django-project-skeleton/archive/master.zip [projectname]
+در صورت وجود جدول فوق، می توانستیم بررسی کنیم که شخصی که در روستا زندگی می کند، آیا فیلد مربوطه به آن ۱ هست یا نه.
 
-If you wish to automagically fill the ``apache2_vhost.sample`` the command is::
+بررسی شد افراد خردسال درآمدی نداشته باشند.
 
-    $ django-admin startproject --template=https://github.com/Mischback/django-project-skeleton/archive/master.zip --name apache2_vhost.sample [projectname]
+بررسی شد افراد خردسال وامی دریافت نکرده باشند.
 
+بررسی شد آیا افرادی که درآمدی ندارند وام دریافت کرده اند.
 
-Documentation
--------------
+مجموع مانده اول سال و واریز و سود سال با کسر برداشت ها باید برابر مانده آخر سال باشد.
 
-You can see the documentation over at **Read the Docs**: `django-project-skeleton
-<http://django-project-skeleton.readthedocs.org/en/stable/>`_
+مانده آخر هر سال باید برابر مانده اول سال بعدی باشد.
+
+افرادی که ماشین دارند، باید قیمت ماشین هایشان مشخص باشد (همیشه اینطور نبود).
