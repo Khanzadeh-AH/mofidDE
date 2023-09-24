@@ -65,7 +65,7 @@ class People1399(People):
     BimeSalmat_Type = models.CharField(max_length=64, null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "People"
+        verbose_name_plural = "People1399"
 
 
 class People1400(People):
@@ -99,7 +99,7 @@ class People1400(People):
     CarsPrice_Min = models.PositiveBigIntegerField(null=True, blank=True)
 
     class Meta:
-        verbose_name_plural = "People"
+        verbose_name_plural = "People1400"
 
 
 class Family(models.Model):
@@ -114,14 +114,14 @@ class Family1399(Family):
     ...
 
     class Meta:
-        verbose_name_plural = "Families"
+        verbose_name_plural = "Families1399"
 
 
 class Family1400(Family):
     ...
 
     class Meta:
-        verbose_name_plural = "Families"
+        verbose_name_plural = "Families1400"
 
 
 class SamePeople(models.Model):
