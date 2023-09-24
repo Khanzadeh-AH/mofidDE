@@ -11,7 +11,3 @@
 # let's include samples of the config files
 !*.sample
 
-venv
-.idea
-**.pyc
-*__pycache__

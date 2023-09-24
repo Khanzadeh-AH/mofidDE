@@ -2,6 +2,11 @@
 *.py[cod]
 __python__/*
 
+venv
+.idea
+**.pyc
+*__pycache__
+
 # do NOT track tox's testing folder
 .tox
 
