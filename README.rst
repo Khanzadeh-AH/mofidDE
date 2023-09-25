@@ -16,6 +16,13 @@ Mofid DE enterance problem
     $ select f99."ParentID", f00."ParentID", f99."MembersID", f00."MembersID" from people_family1399 f99  join people_samepeople ps on f99."ParentID" = ps."id_1399" join people_family1400 f00 on f00."ParentID" = ps."id_1400";
 
 
+Finding families
+----
+برای پیدا کردن خانوار ها، از آی دی سرپرست استفاده شده. به طوریکه افرادی که سرپرست یکسان داشتند در یک خانوار قرار گرفته اند.
+::
+
+    $ select "ParentID", array_agg("ID") members from people_people1399 group by "ParentID" having array_length(array_agg("ID"), 1) > 1;
+
 
 
 
