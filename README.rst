@@ -23,6 +23,8 @@ Finding families
 
     $ select "ParentID", array_agg("ID") members from people_people1399 group by "ParentID" having array_length(array_agg("ID"), 1) > 1;
 
+در کوئری فوق، خانوار هایی که تعدادشان ۱ نفر می باشد، لحاظ نشده (زیرا فرض شده که ۱ نفر به تنهایی یک خانواده حساب نمی شود).
+
 
 
 
